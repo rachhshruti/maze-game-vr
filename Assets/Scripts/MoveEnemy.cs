@@ -2,17 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class handles logic to move the enemy in particular orientation
+/// </summary>
+/// <author>Prerna Preeti</author>
 public class MoveEnemy : MonoBehaviour {
 	public Transform[] points;
 	public float moveSpeed;
 	private int currPt;
-	// Use this for initialization
+	
+	/// <summary>
+	/// Initializes the starting position of the enemy
+	/// </summary>
 	void Start () {
 		transform.position = points [0].position;
 		currPt = 0;
 	}
 	
-	// Update is called once per frame
+	/// <summary>
+	/// Updates the position of the enemy once per frame
+	/// </summary>
 	void Update () {
 		if (transform.position == points [currPt].position) {
 			currPt++;
